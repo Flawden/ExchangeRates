@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import ru.flawden.exchangerates.util.ValidationUtil;
 
 import java.util.Calendar;
+import java.util.Locale;
 
 @Service
 public class CurrencyService {
@@ -17,7 +18,8 @@ public class CurrencyService {
     }
 
     public String isGettingHigher(String code) {
-        code = validationUtil.validateCode(code);
+        code = code.toUpperCase(Locale.ROOT);
+        validationUtil.validateCode(code);
         Calendar cal = Calendar.getInstance();
         float todayCourse = Float.parseFloat(feignService.getRate(cal.getTime(), code));
         cal.add(Calendar.DAY_OF_MONTH, -1);

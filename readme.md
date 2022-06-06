@@ -70,6 +70,8 @@ Application launched
 Before you begin, make sure you have the following installed on your computer:
 - Docker
 
+And you need to build the project through Gradle (Instruction earlier)
+
 Docker must have environment variables set on your system. 
 
 The guide is available at: https://www.twilio.com/blog/2017/01/how-to-set-environment-variables.html

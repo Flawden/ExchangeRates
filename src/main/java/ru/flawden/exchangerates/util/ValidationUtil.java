@@ -10,15 +10,13 @@ import java.util.regex.Pattern;
 @Component
 public class ValidationUtil {
 
-    public String validateCode(String code) {
+    public void validateCode(String code) {
         if (code.length() != 3) {
             throw new ValidationException("The value does not match the length of 3 characters");
         }
         if (!code.matches("[A-Za-z]+")) {
             throw new ValidationException("The code can only contain Latin characters");
         }
-        code = code.toUpperCase(Locale.ROOT);
-        return code;
     }
 
     public void isCurrencyExists(JsonNode currency) {
