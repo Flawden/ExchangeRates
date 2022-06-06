@@ -1,7 +1,6 @@
 package ru.flawden.exchangerates.service;
 
 import org.springframework.stereotype.Service;
-import ru.flawden.exchangerates.exception.ValidationException;
 import ru.flawden.exchangerates.util.ValidationUtil;
 
 import java.util.Calendar;

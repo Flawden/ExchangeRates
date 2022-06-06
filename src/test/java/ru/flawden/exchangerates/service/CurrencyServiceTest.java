@@ -1,5 +1,6 @@
 package ru.flawden.exchangerates.service;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @RunWith(SpringRunner.class)
 @AutoConfigureMockMvc
-class CurrencyServiceTest {
+class FeignServiceTest {
 
     @Autowired
     private FeignService feignService;
@@ -29,7 +30,13 @@ class CurrencyServiceTest {
     }
 
     @Test
-    void isGettingHigher() {
+    void getGif() {
+        assertThat(feignService.getRate(new Date(), "RUB")).isNotNull();
+        assertThat(feignService.getRate(new Date(), "USD")).isNotNull();
+    }
+
+    @Test
+    void getRate() {
         assertThat(feignService.getGif(true)).isNotNull();
         assertThat(feignService.getGif(false)).isNotNull();
     }
