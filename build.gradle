@@ -4,6 +4,7 @@ plugins {
     id 'java'
 }
 
+
 group = 'ru.flawden'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
@@ -11,7 +12,6 @@ sourceCompatibility = '17'
 repositories {
     mavenCentral()
 }
-
 ext {
     set('springCloudVersion', "2021.0.3")
 }
